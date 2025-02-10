@@ -1,0 +1,92 @@
+        :root {
+          --primary-color: #007bff;
+          --secondary-color: #6c757d;
+          --hover-effect: brightness(0.9);
+        }
+        body {
+          background-color: #f8f9fa;
+          font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        header.dashboard-nav {
+          background: var(--primary-color);
+          padding: 1rem 2rem;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .dashboard-container {
+          max-width: 1400px;
+          margin: 2rem auto;
+          padding: 2rem;
+          background: white;
+          border-radius: 15px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .system-header {
+          background: linear-gradient(135deg, var(--primary-color), #0056b3);
+          color: white;
+          padding: 2rem;
+          border-radius: 15px;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+        .feature-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          padding: 1rem;
+        }
+        .feature-card {
+          position: relative;
+          overflow: hidden;
+          border-radius: 12px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          min-height: 250px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-size: cover;
+          background-position: center;
+        }
+        .feature-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.4);
+          z-index: 1;
+        }
+        .feature-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .feature-content {
+          position: relative;
+          z-index: 2;
+          color: white;
+          text-align: center;
+          padding: 2rem;
+        }
+        .stats-overview {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+          margin-top: 3rem;
+        }
+        .stat-card {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 12px;
+          box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+          transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+          transform: translateY(-3px);
+        }
+        .quick-actions {
+          margin-top: 3rem;
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }

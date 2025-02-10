@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+    }
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    /* Dashboard Navigation */
+    .dashboard-nav {
+      background: var(--primary-color);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    /* Main Container */
+    .dashboard-container {
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    /* System Header */
+    .system-header {
+      background: linear-gradient(135deg, var(--primary-color), #0056b3);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+    /* Feature Cards */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .feature-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="dashboard-nav">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="text-white fw-bold fs-4">
+      <i class="fas fa-hospital me-2"></i>Chezhi MediCare System
+    </div>
+    <div class="d-flex gap-3">
+      <a href="/profile" class="text-white"><i class="fas fa-user-circle"></i></a>
+      <form action="/login" method="POST">
+        <button type="submit" class="btn btn-light btn-sm">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="dashboard-container">
+  <!-- System Header -->
+  <div class="system-header">
+    <h1 class="display-4 mb-3">Patient Management</h1>
+    <p class="lead">Manage patient records, medical histories, and appointments</p>
+  </div>
+
+  <!-- Patient Management Feature Grid -->
+  <div class="feature-grid">
+    <!-- Add New Patient Card -->
+    <a href="/patients/add" class="feature-card" style="background-image: url('https://cdn.pixabay.com/photo/2016/10/24/12/28/hospital-1769420_960_720.jpg');">
+      <div class="feature-content">
+        <h3>Add New Patient</h3>
+        <p>Register a new patient record</p>
+        <div class="btn btn-light mt-2">Add Patient</div>
+      </div>
+    </a>
+    <!-- View Patients Card -->
+    <a href="/patients/view" class="feature-card" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/31/14/14/medical-2028719_960_720.jpg');">
+      <div class="feature-content">
+        <h3>View Patients</h3>
+        <p>See all registered patients</p>
+        <div class="btn btn-light mt-2">View Records</div>
+      </div>
+    </a>
+    <!-- Patient History Card -->
+    <a href="/patients/history" class="feature-card" style="background-image: url('https://cdn.pixabay.com/photo/2018/05/22/07/06/medical-3428763_960_720.jpg');">
+      <div class="feature-content">
+        <h3>Patient History</h3>
+        <p>Review detailed medical histories</p>
+        <div class="btn btn-light mt-2">View History</div>
+      </div>
+    </a>
+    <!-- Appointments Card -->
+    <a href="/patients/appointments" class="feature-card" style="background-image: url('https://cdn.pixabay.com/photo/2017/03/28/12/10/appointment-2187438_960_720.jpg');">
+      <div class="feature-content">
+        <h3>Appointments</h3>
+        <p>Manage scheduled patient appointments</p>
+        <div class="btn btn-light mt-2">View Appointments</div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white mt-5 py-4">
+  <div class="container text-center">
+    <div class="d-flex justify-content-center gap-3 mb-3">
+      <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+    <p class="mb-0">© 2025 Chezhi MediCare System. All rights reserved.</p>
+    <p class="text-muted mb-0">Compliant with HIPAA regulations</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
