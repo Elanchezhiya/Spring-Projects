@@ -1,0 +1,260 @@
+/* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Root Container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: auto;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.footer a {
+  color: #f8c400;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ffdb70;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+/* Bus List */
+.bus-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Bus Card */
+.bus-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  width: 220px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.bus-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Seat Selection */
+.seat-button {
+  min-width: 50px;
+  min-height: 50px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  background: #ddd;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.seat-button:hover {
+  transform: scale(1.15);
+}
+
+.seat-wrapper {
+  display: inline-block;
+  margin: 5px;
+}
+
+.aisle-space {
+  margin-right: 20px;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navbar */
+.dark-theme .navbar {
+  background-color: #222 !important;
+}
+
+.dark-theme .nav-link {
+  color: #ddd !important;
+}
+
+/* Dark Theme Fixes */
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  background-color: #444 !important; /* Use dark gray instead of black */
+  color: #ffffff !important; /* White text for visibility */
+  border: 1px solid #666 !important; /* Subtle border for contrast */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Ensure labels and placeholders are visible */
+.dark-theme input::placeholder,
+.dark-theme select,
+.dark-theme textarea::placeholder {
+  color: #bbb !important; /* Light gray placeholders */
+}
+
+.dark-theme label {
+  color: #ffffff !important; /* Make labels readable */
+}
+
+
+/* Buttons in Dark Mode */
+.dark-theme button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dark-theme button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Seat Styling in Dark Mode */
+.dark-theme .seat-button {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-theme .seat-button:hover {
+  background: #666;
+}
+
+/* Highlight Selected Seat */
+.dark-theme .seat-button.selected {
+  background-color: #4CAF50 !important;
+  color: #fff !important;
+  border: 2px solid #66ff66 !important;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(102, 255, 102, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bus-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bus-card {
+    width: 260px;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bus-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bus-card {
+    width: 90%;
+  }
+
+  .form-container {
+    max-width: 90%;
+  }
+
+  .seat-button {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px;
+  }
+
+  .bus-card {
+    width: 100%;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .seat-button {
+    min-width: 35px;
+    min-height: 35px;
+  }
+}
